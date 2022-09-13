@@ -18,6 +18,7 @@ struct TradeSelection {
 
     enum Time: String, CaseIterable, Identifiable {
         case oneMinute = "1m"
+        case fiveMinute = "5m"
         case fifteenMinute = "15m"
         case oneHour = "1h"
         case oneDay = "1d"

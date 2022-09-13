@@ -27,6 +27,8 @@
 		2505A7AC28CEB640009DEDC9 /* TradeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505A7AA28CEB640009DEDC9 /* TradeSelection.swift */; };
 		2505A7AE28CEBA2A009DEDC9 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505A7AD28CEBA2A009DEDC9 /* ModelData.swift */; };
 		2505A7AF28CEBA2A009DEDC9 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505A7AD28CEBA2A009DEDC9 /* ModelData.swift */; };
+		2505A7B228CF06EE009DEDC9 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2505A7B128CF06EE009DEDC9 /* Charts */; };
+		2505A7B428CFE961009DEDC9 /* CandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505A7B328CFE961009DEDC9 /* CandleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		2505A7A628CEAD69009DEDC9 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		2505A7AA28CEB640009DEDC9 /* TradeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSelection.swift; sourceTree = "<group>"; };
 		2505A7AD28CEBA2A009DEDC9 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		2505A7B328CFE961009DEDC9 /* CandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2505A7B228CF06EE009DEDC9 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,7 @@
 				2505A76428CEAAF3009DEDC9 /* ContentView.swift */,
 				2505A79F28CEAC96009DEDC9 /* HomeView.swift */,
 				2505A7A328CEAD5E009DEDC9 /* TradeView.swift */,
+				2505A7B328CFE961009DEDC9 /* CandleView.swift */,
 				2505A7A628CEAD69009DEDC9 /* AccountView.swift */,
 			);
 			path = Views;
@@ -193,6 +198,9 @@
 			dependencies = (
 			);
 			name = "TradingDemo (iOS)";
+			packageProductDependencies = (
+				2505A7B128CF06EE009DEDC9 /* Charts */,
+			);
 			productName = "TradingDemo (iOS)";
 			productReference = 2505A76A28CEAAF5009DEDC9 /* TradingDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +293,9 @@
 				Base,
 			);
 			mainGroup = 2505A75D28CEAAF3009DEDC9;
+			packageReferences = (
+				2505A7B028CF06EE009DEDC9 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 2505A76B28CEAAF5009DEDC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,6 +351,7 @@
 				2505A7A428CEAD5E009DEDC9 /* TradeView.swift in Sources */,
 				2505A78D28CEAAF5009DEDC9 /* ContentView.swift in Sources */,
 				2505A78B28CEAAF5009DEDC9 /* TradingDemoApp.swift in Sources */,
+				2505A7B428CFE961009DEDC9 /* CandleView.swift in Sources */,
 				2505A7A728CEAD69009DEDC9 /* AccountView.swift in Sources */,
 				2505A7AE28CEBA2A009DEDC9 /* ModelData.swift in Sources */,
 			);
@@ -507,9 +519,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46ARXYDMLR;
+				DEVELOPMENT_TEAM = AEGARJ2SJE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -525,6 +538,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsun.TradingDemo;
 				PRODUCT_NAME = TradingDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -537,9 +551,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46ARXYDMLR;
+				DEVELOPMENT_TEAM = AEGARJ2SJE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -555,6 +570,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsun.TradingDemo;
 				PRODUCT_NAME = TradingDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -747,6 +763,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2505A7B028CF06EE009DEDC9 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2505A7B128CF06EE009DEDC9 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2505A7B028CF06EE009DEDC9 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2505A75E28CEAAF3009DEDC9 /* Project object */;
 }

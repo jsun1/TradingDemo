@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct TradeView: View {
     @EnvironmentObject var modelData: ModelData
@@ -22,7 +23,11 @@ struct TradeView: View {
                 .padding()
                 .pickerStyle(.segmented)
 
-                Text("Hello, World!")
+//                Text("Hello, World!")
+//                CandleStickChartView()
+                CandleView()
+                    .environmentObject(modelData)
+                    .padding([.leading, .trailing])
                 
                 List {
                     HStack {
