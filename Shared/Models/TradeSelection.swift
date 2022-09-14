@@ -9,6 +9,7 @@ import Foundation
 
 struct TradeSelection {
     var time = Time.oneMinute
+    var pair: String = "BTCUSD"
     var side = Side.buy
     var type = TradeType.limit
     var price: String = ""

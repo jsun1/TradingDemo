@@ -41,7 +41,7 @@ struct CandleView: UIViewRepresentable {
     func updateUIView(_ uiView: CandleStickChartView, context: Context) {
 //        uiView.currentPage = currentPage
         print("update ui view")
-        let symbol = "BTCUSD"
+        let symbol = modelData.tradeSelection.pair
         let interval = modelData.tradeSelection.time.rawValue
         let limit = "50"
         let parameters = "symbol=\(symbol)&interval=\(interval)&limit=\(limit)"
@@ -62,7 +62,7 @@ struct CandleView: UIViewRepresentable {
     //                for candle in candles {
     //                    let entry = CandleChartDataEntry(x: candle[0], shadowH: candle[3], shadowL: candle[2], open: candle[1], close: candle[4])
     //                }
-                    let dataset = CandleChartDataSet(entries: entries, label: "BTCUSD")
+                    let dataset = CandleChartDataSet(entries: entries, label: symbol)
                     dataset.increasingColor = .red
                     dataset.increasingFilled = true
                     dataset.decreasingColor = .green

@@ -11,6 +11,7 @@ import Charts
 struct TradeView: View {
     @EnvironmentObject var modelData: ModelData
 //    @Binding var tradeSelection: TradeSelection
+    @State private var showingPairs = false
     
     var body: some View {
         NavigationView {
@@ -71,7 +72,18 @@ struct TradeView: View {
 
                 Spacer()
             }
-            .navigationTitle("Trade")
+            .navigationBarTitle("Trade", displayMode: .inline)
+            .toolbar {
+                Button {
+                    showingPairs.toggle()
+                } label: {
+                    Text(modelData.tradeSelection.pair)
+                }
+            }
+            .sheet(isPresented: $showingPairs) {
+                PairsView(showingPairs: $showingPairs)
+                    .environmentObject(modelData)
+            }
         }
     }
 }
