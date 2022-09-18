@@ -5,6 +5,7 @@
 //  Created by Jeffrey Sun on 9/13/22.
 //
 
+import Combine
 import Foundation
 
 struct PairsInfo: Decodable {
@@ -19,19 +20,18 @@ struct Pair: Decodable {
 class PairsNetworkManager: ObservableObject {
     
     @Published var results = [Pair]()
+    var cancellable: AnyCancellable? = nil
     
     init() {
         guard let url = URL(string: "https://api.binance.us/api/v3/exchangeInfo") else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            
-            let pairsInfo = try! JSONDecoder().decode(PairsInfo.self, from: data)
-            
-            DispatchQueue.main.async {
-                self.results = pairsInfo.symbols
-            }
-        }.resume()
+        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: PairsInfo.self, decoder: JSONDecoder())
+            .map { $0.symbols }
+            .replaceError(with: [])
+            .eraseToAnyPublisher()
+            .assign(to: \.results, on: self)
     }
 }
 
