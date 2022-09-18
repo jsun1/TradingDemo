@@ -10,7 +10,6 @@ import Charts
 
 struct TradeView: View {
     @EnvironmentObject var modelData: ModelData
-//    @Binding var tradeSelection: TradeSelection
     @State private var showingPairs = false
     
     var body: some View {
@@ -24,8 +23,6 @@ struct TradeView: View {
                 .padding()
                 .pickerStyle(.segmented)
 
-//                Text("Hello, World!")
-//                CandleStickChartView()
                 CandleView()
                     .environmentObject(modelData)
                     .padding([.leading, .trailing])
