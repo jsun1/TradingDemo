@@ -9,4 +9,5 @@ import Foundation
 
 final class ModelData: ObservableObject {
     @Published var tradeSelection = TradeSelection.default
+    @Published var date = Date()
 }

@@ -83,9 +83,22 @@ struct CandleView: UIViewRepresentable {
     class Coordinator: NSObject {
         var candleView: CandleView
         var cancellable: AnyCancellable? = nil
+        var timer: AnyCancellable? = nil
         
         init(_ candleView: CandleView) {
             self.candleView = candleView
+            
+            // Update on a timer automatically
+            timer = Timer.publish(every: 5, on: .main, in: .default)
+            .autoconnect()
+            .sink { _ in
+                candleView.modelData.date = Date()
+            }
+        }
+        
+        deinit {
+            cancellable?.cancel()
+            timer?.cancel()
         }
     }
 }
